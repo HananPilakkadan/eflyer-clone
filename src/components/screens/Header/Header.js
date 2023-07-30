@@ -34,13 +34,7 @@ const Header = () => {
   const handleCategoryUrl = (title) => {
     dispatch(fetchProducts(title));
     navigate(`/?category=${title}`);
-    console.log(title);
   };
-
-  // const searchUrl = () => {
-  //   // dispatch(fetchProducts(null));
-  // }
-
   const handleHamburger = () => {
     setHamburger(!hamburger);
   };
