@@ -80,6 +80,7 @@ header .bottom-header .hamburger .hamburger-menu .close {
   color: #fff;
 }
 header .bottom-header .hamburger .hamburger-menu .close span {
+  cursor: pointer;
   transition: 0.3s ease;
 }
 header .bottom-header .hamburger .hamburger-menu .close span:hover {
@@ -89,12 +90,10 @@ header .bottom-header .hamburger .hamburger-menu span {
   display: block;
   font-size: 24px;
   margin-bottom: 20px;
-}
-header .bottom-header .hamburger .hamburger-menu span a {
-  transition: 0.3s ease;
   color: #fff;
+  transition: 0.3s ease;
 }
-header .bottom-header .hamburger .hamburger-menu span a:hover {
+header .bottom-header .hamburger .hamburger-menu span:hover {
   color: #f26522;
 }
 header .bottom-header .hamburger .hamburger-menu .content {
@@ -130,6 +129,7 @@ header .bottom-header .category .drop-down {
   z-index: 4;
 }
 header .bottom-header .category .drop-down span {
+  cursor: pointer;
   display: block;
   padding: 12px;
   transition: 0.3s ease-in-out;

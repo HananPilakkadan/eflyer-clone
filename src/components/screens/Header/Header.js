@@ -11,6 +11,9 @@ import {
 
 import axios from "axios";
 import { BASE_URL } from "../../../axiosConfig";
+import { useNavigate } from "react-router";
+import { useDispatch } from "react-redux";
+import { setSearchTerm, fetchProducts } from "../../../Redux/products/product";
 
 const Header = () => {
   const [hamburger, setHamburger] = useState(true);
@@ -18,24 +21,43 @@ const Header = () => {
   const [categoryDropDown, setCategoryDropDown] = useState(false);
   const [category, setCategory] = useState();
 
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    axios.get(`${BASE_URL}categories`).then((response) => {
+    axios.get(`${BASE_URL}/categories`).then((response) => {
       setCategory(response.data);
     });
   }, []);
+
+  const navigate = useNavigate();
+
+  const handleCategoryUrl = (title) => {
+    dispatch(fetchProducts(title));
+    navigate(`/?category=${title}`);
+    console.log(title);
+  };
+
+  // const searchUrl = () => {
+  //   // dispatch(fetchProducts(null));
+  // }
 
   const handleHamburger = () => {
     setHamburger(!hamburger);
   };
   const closeHamburger = () => {
     setHamburger(!hamburger);
-    console.log(hamburger);
   };
   const handleCategory = () => {
     setCategoryDropDown(!categoryDropDown);
   };
   const handleLang = () => {
     setLangDropDown(!langDropDown);
+  };
+
+  const handleSearchChange = (e) => {
+    e.preventDefault();
+    const searchTerm = e.target.value;
+    dispatch(setSearchTerm(searchTerm));
   };
 
   return (
@@ -89,8 +111,11 @@ const Header = () => {
                     {category?.map((item, key) => {
                       return (
                         <>
-                          <span key={key}>
-                            <a href="#">{item}</a>
+                          <span
+                            key={key}
+                            onClick={() => handleCategoryUrl(item)}
+                          >
+                            {item}
                           </span>
                         </>
                       );
@@ -108,8 +133,11 @@ const Header = () => {
                     {category?.map((item, key) => {
                       return (
                         <>
-                          <span key={key}>
-                            <a href="#">{item}</a>
+                          <span
+                            key={key}
+                            onClick={() => handleCategoryUrl(item)}
+                          >
+                            {item}
                           </span>
                         </>
                       );
@@ -119,7 +147,11 @@ const Header = () => {
               </div>
               <div className="header-item form-box">
                 <form action="#">
-                  <input type="text" placeholder="Search this blog" />
+                  <input
+                    type="text"
+                    placeholder="Search this blog"
+                    onChange={(e) => handleSearchChange(e)}
+                  />
                   <button>
                     <SearchOutlined />
                   </button>

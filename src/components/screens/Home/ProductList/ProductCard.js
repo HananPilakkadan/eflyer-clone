@@ -1,30 +1,28 @@
-import React, { useEffect, useState } from "react";
-import { BASE_URL } from "../../../axiosConfig";
-import axios from "axios";
-import PreLoader from "../PreLoader/PreLoader";
+import React, { useEffect } from "react";
+import PreLoader from "../../PreLoader/PreLoader";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchProducts } from "../../../../Redux/products/product";
 
 const ProductCard = () => {
-  const [products, setProducts] = useState();
-  const [error, setError] = useState();
-  const [preloader, setPreloader] = useState(true);
+  const dispatch = useDispatch();
+  const products = useSelector((state) => state.product.product);
+  const preloader = useSelector((state) => state.product.loading);
+  const searchTerm = useSelector((state) => state.product.searchTerm);
+  const error = useSelector((state) => state.product.error);
 
   useEffect(() => {
-    axios
-      .get(BASE_URL)
-      .then((response) => {
-        setProducts(response.data);
-        setPreloader(false);
-      })
-      .catch((error) => {
-        setError(error.message);
-      });
-  }, []);
+    dispatch(fetchProducts(null));
+  }, [dispatch]);
+
+  const filteredProducts = products.filter((product) =>
+    product?.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <>
       {preloader && <PreLoader />}
 
-      {products?.map((product, key) => {
+      {filteredProducts?.map((product, key) => {
         return (
           <div className="product-card" key={key}>
             <div className="name-box">

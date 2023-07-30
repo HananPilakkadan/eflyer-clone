@@ -1,12 +1,15 @@
-import Banner from "./components/screens/Banner/Banner";
-import PreLoader from "./components/screens/PreLoader/PreLoader";
-import ProductList from "./components/screens/ProductList.js/ProductList";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./components/screens/Home/Home";
 
 function App() {
   return (
     <>
-      <Banner />
-      <ProductList />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/:slug" element={<Home />} />
+        </Routes>
+      </Router>
     </>
   );
 }

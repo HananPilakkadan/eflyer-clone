@@ -74,6 +74,7 @@ header {
           font-weight: 700;
           color: #fff;
           span {
+            cursor: pointer;
             transition: 0.3s ease;
             &:hover {
               color: #f26522;
@@ -84,12 +85,11 @@ header {
           display: block;
           font-size: 24px;
           margin-bottom: 20px;
-          a {
-            transition: 0.3s ease;
-            color: #fff;
-            &:hover {
-              color: #f26522;
-            }
+          color: #fff;
+          transition: 0.3s ease;
+
+          &:hover {
+            color: #f26522;
           }
         }
         .content {
@@ -125,6 +125,7 @@ header {
         padding: 20px;
         z-index: 4;
         span {
+          cursor: pointer;
           display: block;
           padding: 12px;
           transition: 0.3s ease-in-out;
@@ -247,7 +248,6 @@ header {
   }
 }
 @media all and (max-width: 640px) {
-
   header .bottom-header {
     flex-direction: column-reverse;
   }
