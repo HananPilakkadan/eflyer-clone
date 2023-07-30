@@ -1,0 +1,85 @@
+.product-section {
+  background: #ffffff;
+}
+.product-section .head {
+  text-align: center;
+}
+.product-section .head h3 {
+  font-size: 40px;
+  color: #30302e;
+}
+.product-section .porduct-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.product-section .product-card {
+  cursor: pointer;
+  max-width: 350px;
+  padding: 20px;
+  width: 100%;
+  margin: 15px;
+  background: #fff;
+  text-align: center;
+  box-shadow: 0px 0 30px 10px #f0f0f0;
+  transition: 0.3s ease-in;
+  overflow: hidden;
+}
+.product-section .product-card:hover {
+  transform: scale(1.02);
+}
+.product-section .product-card:hover img {
+  transform: scale(1.06);
+}
+.product-section .product-card .name-box {
+  text-align: center;
+}
+.product-section .product-card .name-box h5 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: #30302e;
+}
+.product-section .product-card .name-box span {
+  font-size: 16px;
+}
+.product-section .product-card .name-box span small {
+  font-size: 16px;
+  color: #f26522;
+}
+.product-section .product-card .preview-img {
+  width: 250px;
+  margin: 40px auto;
+}
+.product-section .product-card .preview-img img {
+  height: 356px;
+  display: block;
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
+  transition: 0.3s ease-in;
+}
+.product-section .product-card .buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.product-section .product-card .buttons button {
+  cursor: pointer;
+  font-size: 16px;
+  border: none;
+  background: transparent;
+  border: 1px solid transparent;
+  padding: 10px;
+  transition: 0.3s ease;
+}
+.product-section .product-card .buttons button:hover {
+  border: 1px solid #f26522;
+}
+.product-section .product-card .buttons button.buy {
+  font-weight: 600;
+  color: #f26522;
+}
+.product-section .error {
+  padding: 40px;
+  font-size: 20px;
+  color: red;
+}/*# sourceMappingURL=ProductList.css.map */

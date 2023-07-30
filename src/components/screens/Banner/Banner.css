@@ -1,0 +1,72 @@
+#banner {
+  height: 90vh;
+  background-image: url(../../assets/image/banner-bg.png);
+  background-size: cover;
+  background-position: top;
+}
+#banner .banner-wrapper {
+  display: flex;
+  align-items: center;
+}
+#banner .banner-wrapper .banner-item {
+  text-align: center;
+  color: #fff;
+}
+#banner .banner-wrapper .banner-item .content-box h3 {
+  font-size: 60px;
+}
+#banner .banner-wrapper .banner-item .content-box {
+  padding-top: 70px;
+}
+#banner .banner-wrapper .banner-item .content-box button {
+  cursor: pointer;
+  border: none;
+  font-weight: 700;
+  font-size: 20px;
+  color: #fff;
+  background: #252525;
+  padding: 14px 40px;
+  border-radius: 6px;
+  transition: 0.3s ease-in;
+}
+#banner .banner-wrapper .banner-item .content-box button:hover {
+  background: #121212;
+}
+#banner .slick-arrow {
+  z-index: 4;
+  background: rgba(255, 255, 255, 0.4862745098);
+  color: #000;
+  font-size: 30px;
+  width: 40px;
+  height: 40px;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 50%;
+  transition: 0.3s ease-in-out;
+}
+#banner .slick-prev {
+  left: 120px;
+}
+#banner .slick-prev::before {
+  display: none;
+  font-size: 30px;
+}
+#banner .slick-next {
+  right: 120px;
+}
+#banner .slick-next::before {
+  display: none;
+}
+#banner .slick-prev:hover, #banner .slick-prev:focus,
+#banner .slick-prev:hover,
+#banner .slick-prev:focus,
+#banner .slick-next:hover,
+#banner .slick-next:focus,
+#banner .slick-next:hover,
+#banner .slick-next:focus {
+  color: #000;
+  outline: none;
+  background: #fff;
+}/*# sourceMappingURL=Banner.css.map */
