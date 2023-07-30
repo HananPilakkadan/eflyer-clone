@@ -39,12 +39,26 @@ header .bottom-header {
   justify-content: space-between;
   align-items: center;
 }
+header .bottom-header .left-box {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+header .bottom-header .right-box {
+  display: flex;
+  align-items: center;
+}
 header .bottom-header .hamburger {
   cursor: pointer;
   margin-right: 20px;
+  width: 50px;
 }
 header .bottom-header .hamburger .hamburger-menu.active {
   left: 0;
+}
+header .bottom-header .hamburger img {
+  width: 100%;
+  display: block;
 }
 header .bottom-header .hamburger .hamburger-menu {
   position: fixed;
@@ -132,7 +146,7 @@ header .bottom-header .category .drop-down span a {
   display: block;
 }
 header .bottom-header .form-box {
-  width: 48%;
+  width: 65%;
   margin: 0 20px;
 }
 header .bottom-header .form-box form {
@@ -223,4 +237,56 @@ header .bottom-header .user span {
   color: #fff;
   font-size: 16px;
   transition: 0.3s ease-in;
+}
+
+@media all and (max-width: 980px) {
+  header .bottom-header .category {
+    display: none;
+  }
+}
+@media all and (max-width: 768px) {
+  header .top-header ul li a {
+    font-size: 14px;
+  }
+  header .bottom-header .hamburger {
+    width: 45px;
+  }
+}
+@media all and (max-width: 640px) {
+  header .bottom-header {
+    flex-direction: column-reverse;
+  }
+  header .bottom-header .right-box {
+    margin-bottom: 10px;
+    width: 100%;
+    justify-content: space-between;
+  }
+  header .bottom-header .languages .language {
+    background-color: transparent;
+  }
+  header .bottom-header .form-box {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+@media all and (max-width: 560px) {
+  header .top-header {
+    display: none;
+  }
+  header .logo-box {
+    padding: 1px;
+  }
+  header .bottom-header .form-box form input,
+  header .bottom-header .user span,
+  header .bottom-header .languages .language {
+    font-size: 14px;
+  }
+  header .bottom-header .hamburger .hamburger-menu span {
+    font-size: 20px;
+  }
+}
+@media all and (max-width: 480px) {
+  header .logo-box {
+    width: 100px;
+  }
 }/*# sourceMappingURL=Header.css.map */
